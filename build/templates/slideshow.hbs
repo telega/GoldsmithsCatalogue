@@ -1,0 +1,93 @@
+{{> header}}
+{{> slideshow-header}}
+</head>
+<body>
+    <div class="row">&nbsp;</div>
+
+    <!-- BEGIN HEADER -->
+    
+{{> navheader}}
+    <!-- END HEADER -->
+
+    <!-- BEGIN WORK SECTION -->
+    <div class="row">
+      <!-- Begin Sidebar -->
+
+   
+      <div class="large-3 columns">
+         <!-- Begin Student Information -->   
+        <div><ul class="vcard">
+          <li class="website"><a href="http://{{url}}" >{{url}}</a></li>
+          <li class="email"><a href="mailto:{{email}}">{{email}}</a></li>
+        </ul></div>
+
+      <!-- End Student Information -->
+
+      <!-- Begin Student Pages Navigation --> 
+  {{> pagenav}}
+      <!-- End Student Pages Navigation --> 
+
+      <!-- Begin Work Descritpion -->
+      <dl class="show-for-large-up">
+        {{#with slides.[1]}}
+        <dt class="captionTitle">{{title}}</dt>
+        <dd class="captionDescription">{{description}}</dd>
+        <dd class="captionText">{{media}}</dd>
+        {{/with}}
+      </dl>
+      <!-- End work Description -->
+
+      </div>
+      <!-- end Sidebar -->
+
+      <!-- BEGIN MAIN CONTENT AREA -->
+
+      <div  class="large-9 columns text-center">
+
+
+        <div id="slide-pager"><ul class="pagination" ><li class="unavailable arrow"><a href="#"><small>SLIDES</small></a></li><li class="arrow"><a href="#" id="prev">&laquo;</a></li><span id="custom-pager" ></span>&nbsp;<li class="arrow"><a href="#" id="next">&raquo;</a></li></ul></div>
+        
+        <div id="slideshow" data-cycle-auto-height=container data-cycle-pager-active-class="current" data-cycle-loader=wait data-cycle-pager="#custom-pager" data-cycle-pager-template="<li><a href=#> \{{slideNum}} </a></strong>" data-cycle-pager=".cycle-pager" data-cycle-slides="> div">
+
+
+           {{#each slides}}
+           <div class='slide-contents' slide-title="{{this.title}}" slide-description='{{this.description}}' slide-text='{{this.media}}'><img src='assets/{{@root.pageNumber}}-{{@key}}.jpg'></div>
+
+           {{/each}}
+
+
+       </div>
+
+   </div>
+
+
+
+
+
+
+
+
+      <!-- END MAIN CONTENT AREA -->
+    </div>
+
+      <!-- RESPONSIVE (SMALL) SideBar -->
+
+      <div class="row show-for-medium-down">
+        <div class="large-3 columns">
+          <hr>
+        <dl>
+    {{#with slides.[1]}}
+        <dt class="captionTitle">{{title}}</dt>
+        <dd class="captionDescription">{{description}}</dd>
+        <dd class="captionText">{{media}}</dd>
+    {{/with}}
+      </dl>
+    </div>
+  </div>
+
+    <!-- END WORK SECTION -->
+
+
+{{> footer}}
+
+

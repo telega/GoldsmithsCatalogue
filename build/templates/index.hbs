@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Goldsmiths, University of London - {{course}} {{year}} Exhibition" />
+    <meta name="keywords" content="Goldsmiths, University of London, {{course}} {{year}}" />
+    <meta name="author" content="DAMRL" />
+    <title>GOLDSMITHS | {{course}} {{year}} | Department of Art</title>
+    <link rel="icon" type="image/ico" href="http://art.gold.ac.uk/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/app.css" />
+    <link rel="stylesheet" href="../assets/bower_components/cookieCuttr/cookiecuttr.css">
+    <script src="../assets/bower_components/modernizr/modernizr.js"></script>
+    <script src="../assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <!--<script src="../bower_components/foundation/js/foundation.min.js"></script>-->
+    <!--<script src="../js/app.js"></script> -->
+    <!-- EU Cookie Law Script -->
+    
+    <script src="../assets/bower_components/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../assets/bower_components/cookieCuttr/jquery.cookiecuttr.js"></script>
+
+    <script type="text/javascript">
+if (jQuery.cookie('cc_cookie_accept') == "cc_cookie_accept") {
+  var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31830119-1']);
+      _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+}
+</script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+$.cookieCuttr();  
+});
+
+</script>
+
+</head>
+  <body>
+    <div class="row">&nbsp;</div>
+    <!-- BEGIN HEADER -->
+    <div class="row">
+      <div class="large-12 columns">
+        <h1> <small>Goldsmiths |</small> {{course}} <small>{{year}}</small> </h1>
+      </div>
+      <hr>
+    </div>
+    <!-- END HEADER -->
+
+    <!-- BEGIN STUDENT LISTING -->
+
+    
+		<div class="row">
+
+		
+		{{#grouped_each numStudentsEachCol collections.students}}
+    <div class="medium-3 columns">
+		  {{#each this}}       
+           <p><a href=".{{this.path.href}}">{{this.name}}</a></p>
+		  {{/each}}
+    </div>
+    {{/grouped_each}}
+		
+		</div>
+
+   <!-- END STUDENT LISTING -->
+
+    <!-- BEGIN FOOTER -->
+
+    <div class="row">
+      <div class="large-12 columns">
+        &nbsp;
+      </div>
+      <hr>
+    </div>
+
+
+    <div class="row">
+      
+       <div class="medium-3 columns">
+        <p class="text-left"><a href="../index.html" alt="Exhibitions {{year}}">&larr; Back to Exhibitions {{year}}</a></p>
+      </div>
+    </div>
+
+    <!-- END FOOTER -->
+
+
+{{> footer}}

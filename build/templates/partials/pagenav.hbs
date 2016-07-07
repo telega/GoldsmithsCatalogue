@@ -1,0 +1,15 @@
+<div>
+ <ul class = "pagination">
+ <li class='unavailable arrow'><a href='#'><small>PAGES</small></a></li>    
+    {{#paginate pagination type="previous"}}
+      <li class = "arrow {{#if disabled}}unavailable{{/if}}"><a href="{{n}}.html">&laquo;</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="middle"}}
+      <li {{#if active}}class="current"{{/if}}><a href="{{n}}.html">{{n}}</a></li>
+    {{/paginate}}
+    {{#paginate pagination type="next"}}
+      <li class="arrow {{#if disabled}}unavailable{{/if}}"><a href="{{n}}.html">&raquo;</a></li>
+    {{/paginate}}
+  </ul>
+</div>
+ <hr>

@@ -1,0 +1,28 @@
+{
+  "name": "Goldsmiths Catalogue Packages",
+  "description": "just some bower packages",
+  "main": "index.html",
+  "keywords": [
+    "test"
+  ],
+  "authors": [
+    "tom"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "2.7.2",
+    "jquery": "2.1.0",
+    "mediaelement": "^2.21.2",
+    "cookieCuttr": "*",
+    "jquery-cycle2": "malsup/cycle2#^2.1.6"
+  }
+}

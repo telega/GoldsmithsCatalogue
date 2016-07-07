@@ -1,0 +1,21 @@
+<!--SlideShow Script -->
+<script type="text/javascript" src="../../../assets/bower_components/jquery-cycle2/build/jquery.cycle2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#slideshow').cycle({
+    speed: 600,
+    manualSpeed:1,
+    next:   '#next',
+    prev: '#prev', 
+    timeout: 0, 
+    fx:'none'
+   
+  });
+
+  $('#slideshow').on( 'cycle-after', function(event, optionHash, outgoingSlideEl, incomingSlideEl, forwardFlag) {
+            $('.captionTitle').text($(incomingSlideEl).attr('slide-title'));
+            $('.captionDescription').text($(incomingSlideEl).attr('slide-description'));
+            $('.captionText').html($(incomingSlideEl).attr('slide-text'));
+  });
+});
+</script>

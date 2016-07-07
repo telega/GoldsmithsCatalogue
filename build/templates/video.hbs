@@ -1,0 +1,79 @@
+{{> header}}
+{{> video-header}}
+ </head>
+<body>
+    <div class="row">&nbsp;</div>
+
+    <!-- BEGIN HEADER -->
+    
+{{> navheader}}
+    <!-- END HEADER -->
+
+    <!-- BEGIN WORK SECTION -->
+    <div class="row">
+      <!-- Begin Sidebar -->
+
+   
+      <div class="large-3 columns">
+         <!-- Begin Student Information -->   
+        <div><ul class="vcard">
+          <li class="website"><a href="http://{{url}}" >{{url}}</a></li>
+          <li class="email"><a href="mailto:{{email}}">{{email}}</a></li>
+        </ul></div>
+
+      <!-- End Student Information -->
+
+      <!-- Begin Student Pages Navigation --> 
+  {{> pagenav}}
+      <!-- End Student Pages Navigation --> 
+
+      <!-- Begin Work Descritpion -->
+      <dl class="show-for-large-up">
+        <dt class="captionTitle">{{title}}</dt>
+        <dd class="captionDescription">{{description}}</dd>
+        <dd class="captionText">{{media}}</dd>
+      </dl>
+      <!-- End work Description -->
+
+      </div>
+      <!-- end Sidebar -->
+
+      <!-- BEGIN MAIN CONTENT AREA -->
+
+        <div class="large-9 columns">
+        <div class="flex-video">
+        <video width="720" height="{{videoHeight}}" style='width: 100%; height: 100%;' id='player' controls='controls' preload='none'>
+              <!-- MP4 source must come first for iOS -->
+              <source type='video/mp4' src="assets/{{pageNumber}}.mp4" />
+              <!-- WebM for other browsers -->
+              <source type="video/webm" src="assets/{{pageNumber}}.webm" />
+              <!-- Fallback flash player for no-HTML5 browsers with JavaScript turned off -->
+              <object width="720" height="{{videoHeight}}" type='application/x-shockwave-flash' data='../../../js/flashmediaelement.swf'>    
+                <param name='movie' value='../../js/flashmediaelement.swf' /> 
+                <param name='flashvars' value="controls=true&amp;file=assets/{{pageNumber.mp4}}" />     
+              </object>   
+        </video>
+       </div>
+      </div>
+
+      <!-- END MAIN CONTENT AREA -->
+    </div>
+
+      <!-- RESPONSIVE (SMALL) SideBar -->
+
+      <div class="row show-for-medium-down">
+        <div class="large-3 columns">
+          <hr>
+        <dl>
+        <dt class="captionTitle">{{title}}</dt>
+        <dd class="captionDescription">{{description}}</dd>
+        <dd class="captionText">{{media}}</dd>
+      </dl>
+    </div>
+  </div>
+
+    <!-- END WORK SECTION -->
+
+
+{{> video-footer}}
+{{> footer}}
